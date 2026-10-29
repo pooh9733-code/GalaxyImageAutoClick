@@ -36,7 +36,17 @@ class ClickService : AccessibilityService() {
                 override fun onSuccess(result: ScreenshotResult) {
                     var bitmap: Bitmap? = null
                     try {
-                        bitmap = Bitmap.wrapHardwareBuffer(result.hardwareBuffer, result.colorSpace)
+                        
+val hardwareBitmap = Bitmap.wrapHardwareBuffer(
+    result.hardwareBuffer,
+    result.colorSpace
+)
+bitmap = hardwareBitmap?.copy(
+    Bitmap.Config.ARGB_8888,
+    false
+)
+hardwareBitmap?.recycle()
+  
                         val template = BitmapFactory.decodeFile(templateFile.path)
                         if (bitmap != null && template != null && token == generation && prefs.getBoolean("running", false)) {
                             val point = findTemplate(bitmap, template)
