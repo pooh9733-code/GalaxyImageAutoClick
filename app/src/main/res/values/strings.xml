@@ -1,0 +1,1 @@
+<resources><string name="service_description">사용자가 지정한 이미지가 화면에 나타나는지 확인하고, 사용자가 시작한 경우에만 해당 위치를 터치합니다. 화면 이미지는 외부 서버로 전송하지 않습니다.</string></resources>
