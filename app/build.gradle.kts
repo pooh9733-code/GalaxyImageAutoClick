@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.example.galaxyautoclick"
         minSdk = 30
-        targetSdk = 35
+        targetSdk = 32
         versionCode = 2
         versionName = "1.1"
     }
