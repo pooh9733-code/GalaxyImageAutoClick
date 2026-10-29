@@ -1,0 +1,11 @@
+갤럭시에서 GitHub Actions로 APK 만들기
+
+1. github.com 회원가입 후 새 저장소 생성 (권장: Private)
+2. 이 ZIP을 휴대폰에서 압축 해제
+3. GalaxyImageAutoClick 폴더 안의 내용(app, .github, build.gradle.kts, settings.gradle.kts 등)을 저장소 루트에 업로드. ZIP 파일 자체를 올리면 빌드되지 않습니다.
+4. GitHub 저장소 Actions > Build Galaxy APK > Run workflow 실행. push 이벤트로 자동 실행될 수도 있습니다.
+5. 초록색 성공 표시 확인 > 실행 내역 아래 Artifacts > GalaxyImageAutoClick-debug-apk 다운로드
+6. 내려받은 ZIP 압축 해제 > app-debug.apk 실행 > 설치 허용
+7. 접근성 서비스 허용, 이미지 선택, 시작
+
+주의: 이 소스는 실제 클라우드 빌드 및 기기 실행 검증 전입니다. 빌드 오류가 날 수 있습니다. Gradle Wrapper가 없으므로 워크플로에서 Gradle 8.9를 설치합니다. 휴대폰 파일 관리자가 .github 같은 숨김 폴더 업로드를 지원하지 않으면 GitHub 웹사이트에서 .github/workflows/build-apk.yml 파일을 직접 만드세요. 화면 캡처가 제한된 앱에서는 작동하지 않습니다.
